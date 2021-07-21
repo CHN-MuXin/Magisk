@@ -1,5 +1,8 @@
 # 开发者指南
 
+## 语言
+[English (英文)](guides.md)
+
 ## BusyBox
 Magisk 附带一个完整功能的 BusyBox 二进制文件 (包含完整的 SELinux 支持)。 可执行文件位于 `/data/adb/magisk/busybox`。 Magisk 的 BusyBox 支持运行时可切换到 "ASH 独立 Shell 模式"。 这种独立模式的意思是，当在BusyBox的`ash`shell中运行时。每一条命令都会直接使用BusyBox中的小程序。不管设置的是什么 "PATH"。 例如，像`ls`、`rm`、`chmod`这样的命令将**不使用**`PATH`中的内容（在Android中默认为`/system/bin/ls`、`/system/bin/rm`和`/system/bin/chmod`），而是直接调用BusyBox内部小程序。这确保了脚本总是在一个可预测的环境中运行，并且无论在哪个Android版本上运行，都有全部的命令。要强迫一个命令**不使用**BusyBox，你必须用完整的路径调用可执行文件。
 
